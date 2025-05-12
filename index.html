@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman Utama</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-10">
+    <h1 class="text-xl font-bold text-indigo-600">📋 Aplikasi User</h1>
+    <button class="bg-red-500 text-white text-sm px-4 py-2 rounded-md hover:bg-red-600 transition">Logout</button>
+  </nav>
+
+  <!-- Konten Utama -->
+  <main class="p-6 max-w-3xl mx-auto">
+    <div class="bg-white p-8 rounded-2xl shadow-lg">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">
+        Selamat Datang, <span class="text-indigo-600">[Nama User]</span>!
+      </h2>
+      <p class="text-gray-600 mb-6 text-lg">Silakan perbarui data profil Anda:</p>
+
+      <!-- Form Profil (Editable) -->
+      <form action="/update-profile" method="POST" class="grid grid-cols-1 gap-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-1" for="nama">👤 Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" value=""
+                 class="w-full bg-white px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-1" for="email">📧 Email</label>
+          <input type="email" id="email" name="email" value=""
+                 class="w-full bg-white px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-1" for="username">🆔 Username</label>
+          <input type="text" id="username" name="username" value=""
+                 class="w-full bg-white px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-1" for="role">🔐 Role</label>
+          <select id="role" name="role"
+                  class="w-full bg-white px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            <option value="user" selected>User</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+
+        <div class="text-right">
+          <button type="submit"
+                  class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-md">
+            Simpan Perubahan
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>
